@@ -8772,7 +8772,7 @@ ${translatedChapterHindi.text}`
   break
   case 'gemini': {
   if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
-  let geminii = await axios.get(`https://tan-pepperhealer-boar.toystack.dev/gemini?=${text}`)
+  let geminii = await axios.get(`https://miyanapi.toystack.dev/gemini?=${text}`)
   replygcxeon(geminii.data)
   }
   break
