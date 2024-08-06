@@ -8756,23 +8756,24 @@ ${translatedChapterHindi.text}`
   break
   case 'dalle': {
   if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*\n\nUse English❗`)
-  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://aemt.me/dalle?text=${text}`)}, { quoted: m })
+  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://miyanapi.toystack.dev/dalle?=${text}`)}, { quoted: m })
   }
   break
-  case 'stablediffusion': {
-  if (!text) return replygcxeon(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*\n\nUse English❗`)
-  await XeonBotInc.sendMessage(m.chat, {image : await fetchBuffer(`https://aemt.me/stablediffusion?text=${text}`)}, { quoted: m })
-  }
-  break
-  case 'gpt4': {
+  case 'gpt': {
   if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
-  let gptt = await fetchJson(`https://aemt.me/gpt4?text=${text}`)
-  replygcxeon(gptt.result)
+  let geminii = await axios.get(`https://miyanapi.toystack.dev/gpt?=${text}`)
+  replygcxeon(geminii.data)
   }
   break
   case 'gemini': {
   if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
   let geminii = await axios.get(`https://miyanapi.toystack.dev/gemini?=${text}`)
+  replygcxeon(geminii.data)
+  }
+  break
+  case 'bing': {
+  if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
+  let geminii = await axios.get(`https://miyanapi.toystack.dev/bing?=${text}`)
   replygcxeon(geminii.data)
   }
   break
@@ -9643,24 +9644,11 @@ case 'photoleap': {
 }
 break
 case 'ai':
-case 'openai': {
-	if (!text) return replygcxeon(`*• Example:* ${prefix + command} what is your name`);   
-        let name = XeonBotInc.getName(m.sender);
-        try {
-            const response = await axios.post("https://deepenglish.com/wp-json/ai-chatbot/v1/chat", {
-                messages: [
-                    { role: "system", content: `${name}` },
-                    { role: "user", content: text }
-                ]
-            });
-            const hasil = response.data;   
-            replygcxeon(hasil.answer);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            return replygcxeon(error);
-        }
-    }
-    break
+if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
+  let geminii = await axios.get(`https://miyanapi.toystack.dev/gemini?=${text}`)
+  replygcxeon(geminii.data)
+  }
+  break
 case 'wikipedia': case 'wiki': {
 	if (!text) return replygcxeon(` Enter what you want to search for on Wikipedia`)
 	
