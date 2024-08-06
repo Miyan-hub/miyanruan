@@ -4,6 +4,6 @@ WORKDIR /usr/app
 
 COPY ./ /usr/app
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt && pip install -U google-generativeai
 
 CMD ["python", "main.py"]
