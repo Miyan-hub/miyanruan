@@ -15,7 +15,7 @@ def run_admin():
     return "Hello Admin", 200
 
 @app.route("/gemini")
-def run_admin():
+def run_gemini():
     response = model.generate_content(request.args.get(""))
     return response.text, 200
 
