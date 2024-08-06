@@ -9643,7 +9643,7 @@ case 'photoleap': {
   }
 }
 break
-case 'ai':
+case 'ai': {
 if (!text) return replygcxeon(`Example Usage : ${prefix + command} Halo nama kamu siapa?`)
   let geminii = await axios.get(`https://miyanapi.toystack.dev/gemini?=${text}`)
   replygcxeon(geminii.data)
