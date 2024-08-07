@@ -1,0 +1,17 @@
+{
+    "name":"Miyan",
+    "version": "1.0.0",
+    "description": "Simple",
+    "main": "index.js",
+    "type": "commonjs",
+    "directories": {
+        "lib": "lib",
+        "src": "src",
+        "media": "XeonMedia"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+    }
+}
